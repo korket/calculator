@@ -4,9 +4,45 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
   <title>Calculator</title>
 </head>
 <body>
-  
+  <div class="history-container">
+  </div>
+
+  <div class="result-container">
+    <div class="result"></div>
+  </div>
+
+  <div class="utilities-container">
+    <button class="clear utility" onclick="allClear">AC</button>
+    <button class="correct utility" onclick="correct">☒</button>
+    <button class="percent utility" onclick="percent">%</button>
+    <button class="divide utility" onclick="divide">÷</button>
+
+    <button class="seven utility" onclick="seven">7</button>
+    <button class="eight utility" onclick="eight">8</button>
+    <button class="nine utility" onclick="nine">9</button>
+    <button class="multiply utility" onclick="input('×')">x</button>
+
+    <button class="four utility" onclick="input(4)">4</button>
+    <button class="five utility" onclick="">5</button>
+    <button class="six utility" onclick="">6</button>
+    <button class="subtract utility" onclick="">-</button>
+
+
+    <button class="one utility" onclick="input('1')">1</button>
+    <button class="two utility" onclick="input('2')">2</button>
+    <button class="three utility" onclick="input('3')">3</button>
+    
+    <button class="add utility" onclick="add">+</button>
+
+    <button class="switch utility" onclick="none">#</button>
+    <button class="zero utility" onclick="zero">0</button>
+    <button class="decimal utility" onclick="decimal">.</button>
+    <button class="sum utility" onclick="sum">=</button>
+  </div>
 </body>
 </html>
