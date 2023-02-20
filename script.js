@@ -37,6 +37,11 @@ function clear() {
   result.textContent = '';
 };
 
+function correct() {
+  result.textContent = result.textContent.slice(0,-1);
+  initialValue = initialValue.slice(0,-1);
+}
+
 function operators(symbol) {
   x = initialValue;
   newValue = '';
