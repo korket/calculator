@@ -15,7 +15,7 @@ body {
   display: grid;
 }
 
-.calculate-container {
+.result-container {
   display: grid;
   justify-items: flex-end;
   align-items: center;
@@ -26,7 +26,7 @@ body {
   /* background-color: red; */
 }
 
-.calculate {
+.result {
   font-size: 1.5rem;
   color: white;
 }
