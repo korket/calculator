@@ -1,22 +1,40 @@
 const result = document.querySelector('.result');
-
+let operator;
 let initialValue = '';
+let x;
+let newValue = '';
 
 function input(number) {
   result.textContent += number;
   initialValue += number;
+  newValue += number;
 };
 
-function operate(operator) {
+let values = [1234,4321];
+
+function operate() {
+  if (operator === '+') {
+    result.textContent = Number(x) + Number(newValue);
+  }
+  else if (operator === '-') {
+    result.textContent = Number(x) - Number(newValue);
+  }
+  else if (operator === '×') {
+    result.textContent = Number(x) * Number(newValue);
+  }
+  else if (operator === '÷') {
+    result.textContent = Number(x) / Number(newValue);
+  }
+  initialValue = result.textContent;
 };
 
 function clear() {
-  result.textContent = 0;
+  result.textContent = '';
 }
 
-const operator = {
-  add(x,y) {return x+y},
-  subtract(x,y) {return x-y},
-  multiply(x,y) {return x*y},
-  divide(x,y) {return x/y},
+function operators(symbol) {
+    x = initialValue;
+    newValue = '';
+    operator = symbol;
+    result.textContent += symbol;
 };
