@@ -1,16 +1,17 @@
 const result = document.querySelector('.result');
-let operator;
+const allClear = document.querySelector('.clear');
+allClear.addEventListener('click', () => clear());
+
 let initialValue = '';
-let x;
 let newValue = '';
+let operator;
+let x;
 
 function input(number) {
   result.textContent += number;
   initialValue += number;
   newValue += number;
 };
-
-let values = [1234,4321];
 
 function operate() {
   if (operator === '+') {
@@ -29,12 +30,16 @@ function operate() {
 };
 
 function clear() {
+  x = '';
+  initialValue = '';
+  newValue = '';
+  operator = '';
   result.textContent = '';
-}
+};
 
 function operators(symbol) {
-    x = initialValue;
-    newValue = '';
-    operator = symbol;
-    result.textContent += symbol;
+  x = initialValue;
+  newValue = '';
+  operator = symbol;
+  result.textContent += symbol;
 };
