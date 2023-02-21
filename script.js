@@ -48,3 +48,13 @@ function operators(symbol) {
   operator = symbol;
   result.textContent += symbol;
 };
+
+function percent() {
+  if (!operator) {
+    initialValue = Number(initialValue)/100;
+  }
+  else {
+    newValue = Number(newValue)/100;
+  }
+  result.textContent += '%';
+};
