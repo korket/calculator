@@ -43,6 +43,7 @@ function correct() {
 }
 
 function operators(symbol) {
+  operate();
   x = initialValue;
   newValue = '';
   operator = symbol;
