@@ -26,6 +26,7 @@ function operate() {
   else if (operator === '÷') {
     result.textContent = Number(x) / Number(newValue);
   }
+  result.textContent = Math.round(result.textContent * 100) / 100;
   initialValue = result.textContent;
 };
 
