@@ -64,6 +64,6 @@ function percent() {
   }
   else {
     newValue = Number(newValue)/100;
-    result.textContent += '%';
+    result.textContent = `${x}${operator}${newValue}`
   }
 };
