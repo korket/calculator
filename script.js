@@ -15,19 +15,25 @@ function input(number) {
 
 function operate() {
   if (operator === '+') {
-    result.textContent = Number(x) + Number(newValue);
+    initialValue = Number(x) + Number(newValue);
   }
   else if (operator === '-') {
-    result.textContent = Number(x) - Number(newValue);
+    initialValue = Number(x) - Number(newValue);
   }
   else if (operator === '×') {
-    result.textContent = Number(x) * Number(newValue);
+    if (newValue === '') {
+      newValue = '1';
+    }
+    initialValue = Number(x) * Number(newValue);
   }
   else if (operator === '÷') {
-    result.textContent = Number(x) / Number(newValue);
+    if (newValue === '') {
+      newValue = '1';
+    }
+    initialValue = Number(x) / Number(newValue);
   }
-  result.textContent = Math.round(result.textContent * 100) / 100;
-  initialValue = result.textContent;
+  initialValue = Math.round(initialValue * 100) / 100;
+  result.textContent = initialValue;
 };
 
 function clear() {
@@ -45,18 +51,19 @@ function correct() {
 
 function operators(symbol) {
   operate();
-  x = initialValue;
-  newValue = '';
   operator = symbol;
+  newValue = '';
+  x = initialValue;
   result.textContent += symbol;
 };
 
 function percent() {
   if (!operator) {
     initialValue = Number(initialValue)/100;
+    result.textContent = initialValue;
   }
   else {
     newValue = Number(newValue)/100;
+    result.textContent += '%';
   }
-  result.textContent += '%';
 };
