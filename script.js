@@ -67,3 +67,11 @@ function percent() {
     result.textContent = `${x}${operator}${newValue}`
   }
 };
+
+function decimal() {
+  if (!initialValue.includes('.')) {
+    initialValue += '.';
+    newValue += '.';
+    result.textContent += '.';
+  }
+}
