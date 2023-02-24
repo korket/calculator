@@ -46,7 +46,11 @@ function clear() {
 
 function correct() {
   result.textContent = result.textContent.slice(0,-1);
-  initialValue = initialValue.slice(0,-1);
+  if (result.textContent.slice(result.textContent.length-1) === operator) {
+    operator = '';
+  } else {
+    initialValue = initialValue.slice(0,-1);
+  }
 };
 
 function operators(symbol) {
