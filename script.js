@@ -47,7 +47,7 @@ function clear() {
 function correct() {
   result.textContent = result.textContent.slice(0,-1);
   initialValue = initialValue.slice(0,-1);
-}
+};
 
 function operators(symbol) {
   operate();
@@ -69,9 +69,11 @@ function percent() {
 };
 
 function decimal() {
+  result.textContent += '.';
   if (!initialValue.includes('.')) {
-    initialValue += '.';
-    newValue += '.';
-    result.textContent += '.';
+    initialValue += '.';    
   }
-}
+  if (!newValue.includes('.')) {
+    newValue += '.';    
+  }
+};
