@@ -101,3 +101,12 @@ body {
   color: #C0EEF2;
   background-color: #537FE7;
 }
+
+::-webkit-scrollbar {
+  background: transparent;
+  width: 0.7rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #E9F8F950;
+}
