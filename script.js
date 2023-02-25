@@ -33,6 +33,8 @@ function operate() {
     initialValue = Number(x) / Number(newValue);
   }
   initialValue = Math.round(initialValue * 100) / 100;
+  x = initialValue;
+  newValue = '';
   result.textContent = initialValue;
 };
 
@@ -45,12 +47,14 @@ function clear() {
 };
 
 function correct() {
-  result.textContent = result.textContent.slice(0,-1);
-  if (result.textContent.slice(result.textContent.length-1) === operator) {
+  if (result.textContent.slice(result.textContent.length-1) == operator) {
     operator = '';
-  } else {
-    initialValue = initialValue.slice(0,-1);
   }
+  else {
+    initialValue = initialValue.slice(0,-1);
+    newValue = newValue.slice(0,-1);
+  }
+  result.textContent = result.textContent.slice(0,-1);
 };
 
 function operators(symbol) {
@@ -138,4 +142,4 @@ window.addEventListener ('keydown', (e) => {
       decimal();
     break;
   }
-})
+});
