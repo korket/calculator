@@ -35,6 +35,7 @@ function operate() {
   initialValue = Math.round(initialValue * 100) / 100;
   x = initialValue;
   newValue = '';
+  operator = '';
   result.textContent = initialValue;
 };
 
@@ -51,7 +52,7 @@ function correct() {
     operator = '';
   }
   else {
-    initialValue = initialValue.slice(0,-1);
+    initialValue = String(initialValue).slice(0,-1);
     newValue = newValue.slice(0,-1);
   }
   result.textContent = result.textContent.slice(0,-1);
