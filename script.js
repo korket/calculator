@@ -100,6 +100,16 @@ function newHistory(x, newValue, operator, result) {
   newHistory.textContent = `${x} ${operator} ${newValue} = ${result}`;
 };
 
+// switch / fullscreen
+
+function fullScreen() {
+  if (document.querySelector('html').requestFullscreen()) {
+    document.exitFullscreen();
+  } else {
+    document.querySelector('html').requestFullscreen();
+  }
+};
+
 // keyboard
 
 window.addEventListener('keydown', (e) => {
