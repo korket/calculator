@@ -7,8 +7,8 @@
 
 body {
   display: grid;
-  grid-template-rows: 40vh 10vh 40vh;
-  background-color: black;
+  grid-template-rows: 40vh 10vh 50vh;
+  background-color: #181823;
 }
 
 .history-container {
@@ -45,9 +45,22 @@ body {
 /* ui styles */
 
 .utility {
-  width: 3rem;
-  height: 3rem;
+  width: 3.5rem;
+  height: 3.5rem;
   border-radius: 50%;
   border: none;
   font-size: 1.5rem;
+  background-color: #E9F8F9;
+}
+
+/* operators */
+
+.operator {
+  background-color: #537FE7;
+}
+
+/* others */
+
+.other {
+  background-color: #C0EEF2;
 }
