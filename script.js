@@ -81,3 +81,61 @@ function decimal() {
     newValue += '.';    
   }
 };
+
+// keyboard
+
+window.addEventListener ('keydown', (e) => {
+  // numbers
+
+  if (e.key == Number(e.key)) {
+    input(e.key);
+  }
+
+  // operators
+  
+  switch(e.key) {
+    case '+':
+      operators('+');
+    break;
+
+    case '-':
+      operators('-');
+    break;
+
+    case '*':
+      operators('×');
+    break;
+
+    case '/':
+      operators('÷');
+    break;
+  }
+
+  // others
+
+  switch(e.key) {
+    case 'Escape':
+      clear();
+    break;
+
+    case 'Backspace':
+      correct();
+    break;
+
+    case 'Enter':
+      operate();
+    break;
+
+    case '=':
+      operate();
+    break;
+
+    case '%':
+      percent();
+    break;
+
+    case '.':
+      decimal();
+    break;
+  }
+})
