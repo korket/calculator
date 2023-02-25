@@ -33,6 +33,9 @@ function operate() {
     initialValue = Number(x) / Number(newValue);
   }
   initialValue = Math.round(initialValue * 100) / 100;
+  if (x != undefined && newValue != '') {
+    newHistory(x, newValue, operator, initialValue);
+  };
   x = initialValue;
   newValue = '';
   operator = '';
@@ -48,14 +51,14 @@ function clear() {
 };
 
 function correct() {
-  if (result.textContent.slice(result.textContent.length-1) == operator) {
+  if (result.textContent.slice(result.textContent.length - 1) == operator) {
     operator = '';
   }
   else {
-    initialValue = String(initialValue).slice(0,-1);
-    newValue = newValue.slice(0,-1);
+    initialValue = String(initialValue).slice(0, -1);
+    newValue = newValue.slice(0, -1);
   }
-  result.textContent = result.textContent.slice(0,-1);
+  result.textContent = result.textContent.slice(0, -1);
 };
 
 function operators(symbol) {
@@ -68,11 +71,11 @@ function operators(symbol) {
 
 function percent() {
   if (!operator) {
-    initialValue = Number(initialValue)/100;
+    initialValue = Number(initialValue) / 100;
     result.textContent = initialValue;
   }
   else {
-    newValue = Number(newValue)/100;
+    newValue = Number(newValue) / 100;
     result.textContent = `${x}${operator}${newValue}`
   }
 };
@@ -80,16 +83,26 @@ function percent() {
 function decimal() {
   result.textContent += '.';
   if (!initialValue.includes('.')) {
-    initialValue += '.';    
+    initialValue += '.';
   }
   if (!newValue.includes('.')) {
-    newValue += '.';    
+    newValue += '.';
   }
+};
+
+// history
+
+function newHistory(x, newValue, operator, result) {
+  const histories = document.querySelector('.history');
+  const newHistory = document.createElement('p');
+
+  histories.appendChild(newHistory);
+  newHistory.textContent = `${x} ${operator} ${newValue} = ${result}`;
 };
 
 // keyboard
 
-window.addEventListener ('keydown', (e) => {
+window.addEventListener('keydown', (e) => {
   // numbers
 
   if (e.key == Number(e.key)) {
@@ -97,50 +110,50 @@ window.addEventListener ('keydown', (e) => {
   }
 
   // operators
-  
-  switch(e.key) {
+
+  switch (e.key) {
     case '+':
       operators('+');
-    break;
+      break;
 
     case '-':
       operators('-');
-    break;
+      break;
 
     case '*':
       operators('×');
-    break;
+      break;
 
     case '/':
       operators('÷');
-    break;
+      break;
   }
 
   // others
 
-  switch(e.key) {
+  switch (e.key) {
     case 'Escape':
       clear();
-    break;
+      break;
 
     case 'Backspace':
       correct();
-    break;
+      break;
 
     case 'Enter':
       operate();
-    break;
+      break;
 
     case '=':
       operate();
-    break;
+      break;
 
     case '%':
       percent();
-    break;
+      break;
 
     case '.':
       decimal();
-    break;
+      break;
   }
 });
