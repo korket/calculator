@@ -7,12 +7,13 @@
 
 body {
   display: grid;
-  grid-template-rows: 40vh 10vh 50vh;
+  grid-template-rows: 1fr 10vh 50vh;
   background-color: #181823;
 }
 
 .history-container {
   display: grid;
+  min-height: 40vh;
 }
 
 .result-container {
@@ -50,7 +51,15 @@ body {
   border-radius: 50%;
   border: none;
   font-size: 1.5rem;
+  color: #181823;
   background-color: #E9F8F9;
+}
+
+.utility:hover {
+  color: #E9F8F9;
+  background-color: #537FE7;
+  scale: 1.1;
+  transition: 100ms;
 }
 
 /* operators */
@@ -59,8 +68,18 @@ body {
   background-color: #537FE7;
 }
 
+.operator:hover {
+  color: #537FE7;
+  background-color: #E9F8F9;
+}
+
 /* others */
 
 .other {
   background-color: #C0EEF2;
+}
+
+.other:hover {
+  color: #C0EEF2;
+  background-color: #537FE7;
 }
