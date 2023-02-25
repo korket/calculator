@@ -48,6 +48,10 @@ function clear() {
   newValue = '';
   operator = '';
   result.textContent = '';
+  const history = document.querySelector('.history');
+  while (history.firstChild) {
+    history.removeChild(history.firstChild);
+  }
 };
 
 function correct() {
