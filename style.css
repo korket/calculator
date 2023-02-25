@@ -15,9 +15,9 @@ body {
 .history-container {
   display: grid;
 
-  min-height: 40vh;
+  height: 40vh;
   padding-right: 1rem;
-  /* background-color: red; */
+  overflow-y: scroll;
 }
 
 .history {
