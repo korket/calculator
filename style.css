@@ -57,7 +57,7 @@ body {
   justify-items: center;
   align-items: center;
 
-  padding: .2.5rem;
+  padding: .25rem;
   gap: .5rem;
 }
 
@@ -109,4 +109,35 @@ body {
 
 ::-webkit-scrollbar-thumb {
   background: #E9F8F950;
+}
+
+@media (min-width: 1000px) {
+  html {
+    background-color: #181823EE;
+  }
+
+  body {
+    grid-template-rows: 30% 10% 60%;
+
+    height: 600px;
+    width: 375px;
+    margin: auto;
+    margin-top: 5%;
+
+    border: solid 2px #E9F8F9;
+    border-radius: 10px;
+  }
+
+  .history-container {
+    height: 100%;
+  }
+
+  .result-container {
+    margin-bottom: 0;
+  }
+
+  .utilities-container {
+    padding: 0;
+    gap: 0;
+  }
 }
