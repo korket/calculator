@@ -33,7 +33,7 @@ function operate() {
     initialValue = Number(x) / Number(newValue);
   }
   initialValue = Math.round(initialValue * 100) / 100;
-  if (x != undefined && newValue != '') {
+  if (x != undefined && operator != '' && newValue != '') {
     newHistory(x, newValue, operator, initialValue);
   };
   x = initialValue;
